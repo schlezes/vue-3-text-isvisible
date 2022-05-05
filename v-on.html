@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>vue</title>
+        <script src="https://unpkg.com/vue@next"></script>
+        <style>
+            body {
+                text-align: center;
+            }
+            .box1 {
+                margin: 0 auto;
+                font-size: 2em;
+                border: 1px red dashed;
+            }
+            .box2 {
+                margin: 0 auto;
+                height: 20px;
+                width:  70px;
+                font-size: 2em;
+                border: 1px green dashed;
+            }
+        </style>
+    </head>
+
+<body>
+    <div id="app">
+        <div><h2>Vue 3 examples of v-on directive</h2></div>
+
+        <div>{{greeting}}</div>
+
+        <button v-on:click="isVisible = !isVisible">Click this button to see box below toggle with each click</button>
+
+        <div class="box1" v-if="isVisible">see me</div>
+
+        <button v-on:click="isVisible2 = !isVisible2">Click this button to see box below toggle with each click</button>
+        
+        <div class="box2" v-if="isVisible2">see me</div>
+
+    </div>
+
+<script>
+
+    let app = Vue.createApp({
+        data: function () {
+        return {
+            greeting: "Vue 3 events",
+            isVisible: false,
+            isVisible2: false
+            }
+        }
+    })
+    app.mount("#app")
+
+</script>
+</body>
+</html>
